@@ -1,6 +1,7 @@
 import React from 'react';
 
 import List from './list';
+import AddForm from './add-form';
 
 import './board.css';
 
@@ -29,7 +30,12 @@ export default class Board extends React.Component {
         return (
             <div className="board">
                 <h2>Example board</h2>
-                <ul className="lists">{lists}</ul>
+                <ul className="lists">
+                  {lists}
+                  <li className="add-list-wrapper">
+                      <AddForm type="list" />
+                  </li>
+                </ul>
             </div>
         );
     }

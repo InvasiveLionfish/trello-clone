@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Card from './card';
+import AddForm from './add-form';
 
 export default class List extends React.Component {
     constructor(props) {
@@ -27,6 +28,9 @@ export default class List extends React.Component {
                 <h3>{this.props.title}</h3>
                 <ul className="list">
                     {cards}
+                    <li>
+                      <AddForm type="card" />
+                    </li>
                 </ul>
             </div>
         );
