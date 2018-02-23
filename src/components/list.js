@@ -17,6 +17,14 @@ export default class List extends React.Component {
         }
     }
 
+   addCard(text) {
+     this.setState({
+         cards: [...this.state.cards, {
+             text
+         }]
+     });
+   }
+
     render() {
         const cards = this.state.cards.map((card, index) =>
             <li key={index}>
@@ -29,7 +37,7 @@ export default class List extends React.Component {
                 <ul className="list">
                     {cards}
                     <li>
-                      <AddForm type="card" />
+                      <AddForm type="card" onAdd={text => this.addCard(text)} />
                     </li>
                 </ul>
             </div>
